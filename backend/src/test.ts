@@ -10,7 +10,7 @@ test('test', async (t) => {
 
     const res = await app.inject({
         method: 'GET',
-        url: '/'
+        url: '/test'
     })
 
     equal(res.statusCode, 200)

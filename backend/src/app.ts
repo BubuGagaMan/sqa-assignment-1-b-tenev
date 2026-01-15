@@ -4,6 +4,8 @@ import fastifyJwt from "@fastify/jwt";
 import AppDataSource from "./db/data-source.js";
 
 import { testErrorCode } from "./errors.js";
+import exampleRoute from "./routes/exampleRoute.js";
+
 
 import { FastifyRequest, FastifyReply } from "fastify";
 
@@ -32,6 +34,14 @@ export async function buildApp(opts = {}) {
     "authenticate",
     (async (req: FastifyRequest, reply: FastifyReply) => await authenticate(req))
   );
+
+  app.register(exampleRoute);
+
+  app.setErrorHandler(async function (error, request, reply) {
+    request.log.error(error);
+    reply.status(error.statusCode || 500);
+    reply.send({ error: error.message });
+  });
 
   // manually call the notfound error handler (can direct system to jump to this route)
   app.get("/notfound", async (_request, reply) => {
