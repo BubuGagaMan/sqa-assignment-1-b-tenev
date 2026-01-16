@@ -3,6 +3,9 @@ import { DataSource } from "typeorm";
 import { User } from "./entities/user/User.entity.js";
 import { Role } from "./entities/role/Role.entity.js";
 
+import dotenv from "dotenv";
+dotenv.config();
+
 const AppDataSource = new DataSource({
   type: "postgres",
   host: process.env.DB_HOST || "localhost",
