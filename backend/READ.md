@@ -1,3 +1,5 @@
+# node/npm is required to tun this project: https://nodejs.org/en/download
+
 ## Quick Copy-Paste Checklist (commands)
 
 ```bash
@@ -32,6 +34,11 @@ For linux, see psql installation guide here: https://www.tigerdata.com/learn/how
 For windows, see psql setup here: https://www.youtube.com/watch?v=GpqJzWCcQXY - or directly install here: https://www.postgresql.org/download/windows/
 
 ## After install/build — Run & Verify Tests
+
+Ensure that you have updated your psql database by running the migrations via the migration scripts:
+
+npm run migration:generate all - this will generate any loose/leftover migrations which might not be included in the repo - but should not be neccessary
+npm run migration:run - this will execute all migrations for your psql server
 
 ```bash
 # Run/verify all currently existing tests (looks for .test.js files under ./dist/tests/)
