@@ -30,7 +30,8 @@ npm run build
 PostgreSQL is used as the database for this project.
 This means that a psql database needs to be set up beforehand and its values need to be inserted into the .env file (follow the example)
 
-For linux, see psql installation guide here: https://www.tigerdata.com/learn/how-to-install-postgresql-on-linux
+For linux, see "LINUX_RUNNING_PSQL.md" within the backend repo
+
 For windows, see psql setup here: https://www.youtube.com/watch?v=GpqJzWCcQXY - or directly install here: https://www.postgresql.org/download/windows/
 
 ## After install/build — Run & Verify Tests
