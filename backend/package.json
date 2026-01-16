@@ -12,6 +12,8 @@
     "migration:run": "node ./src/db/scripts/migrationRun.js",
     "migration:revert": "node ./src/db/scripts/migrationRevert.js",
     "entity:create": "node ./src/db/scripts/entityCreate.js",
+    "db:seed": "node ./dist/db/fixtures/seedDB.js",
+    "run:files": "node ./run-files.js"
   },
   "keywords": [],
   "author": "",
