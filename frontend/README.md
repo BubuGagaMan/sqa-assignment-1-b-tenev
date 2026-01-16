@@ -34,3 +34,12 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+## Running Cypress
+```
+npx cypress open
+```
+
+Then navigate to end to end and choose a browser, before running desired tests
+
+NOTE!!! The back end needs to be re-seeded every time the tests are run (via "npm run db:seed" in the root of the back end)
