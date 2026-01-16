@@ -1,5 +1,6 @@
 import fastify from "fastify";
 import fastifyJwt from "@fastify/jwt";
+import cors from "@fastify/cors";
 
 import AppDataSource from "./db/data-source.js";
 
@@ -17,6 +18,13 @@ dotenv.config();
 
 export async function buildApp(opts = {}) {
   const app = fastify(opts);
+
+  await app.register(cors, {
+    origin: true, 
+    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+    // "access-token" must be listed here for cors to allow it...
+    allowedHeaders: ["Content-Type", "Authorization", "access-token"], 
+  });
 
   await AppDataSource.initialize();
   app.decorate("db", AppDataSource);

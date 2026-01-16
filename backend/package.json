@@ -21,6 +21,7 @@
   "description": "",
   "dependencies": {
     "@fastify/autoload": "^6.3.1",
+    "@fastify/cors": "^11.2.0",
     "@fastify/error": "^4.2.0",
     "@fastify/jwt": "^9.1.0",
     "bcrypt": "^6.0.0",
