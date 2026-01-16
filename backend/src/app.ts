@@ -5,7 +5,7 @@ import AppDataSource from "./db/data-source.js";
 
 import { testErrorCode } from "./errors.js";
 import exampleRoute from "./routes/exampleRoute.js";
-
+import userR from "./routes/user/User.routes.js";
 
 import { FastifyRequest, FastifyReply } from "fastify";
 
@@ -36,6 +36,7 @@ export async function buildApp(opts = {}) {
   );
 
   app.register(exampleRoute);
+  app.register(userR);
 
   app.setErrorHandler(async function (error, request, reply) {
     request.log.error(error);
